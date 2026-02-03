@@ -1,0 +1,44 @@
+.noti{
+    padding: 10px;
+    color: white;
+}
+.notiCards{
+    margin: 10px 0px 0px 0px;
+    width: 90%;
+    height: 60px;
+    background-color: rgb(89, 111, 54);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 6px;
+}
+.notiimg{
+    /* background-color: blueviolet; */
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.notiimg>img{
+    height: 45px;
+  width:45px;
+  border-radius: 20px;
+}
+.Notinames{
+    /* background-color: aqua; */
+    width: 50%;
+    height: 100%;
+    align-content: center;
+}
+.notibutton{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Notiname {
+    font-size: x-large;
+    font-weight: bold;
+}

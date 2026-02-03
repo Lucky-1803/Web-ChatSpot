@@ -1,0 +1,37 @@
+.signup{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.left {
+    height: 60vh;
+    width: 40vw;
+    border-radius: 10px;
+    background-color: white;
+}
+.su{
+    /* background-color: white; */
+    height: 80vh;
+    width: 40vw;
+    
+}
+.su{
+    padding: 10px;
+    align-content: center;
+}
+.libttn2 {
+    margin-top: 10px;
+    border-style: none;
+    border-radius: 15px;
+    font-weight: bold;
+    background-color: rgb(7, 10, 4);
+    color: white;
+    width: 39vw;
+    background-color:  rgb(65, 77, 48);
+    border: 2px solid black;
+}
+.libttn2:hover{
+    background-color:  rgb(89, 111, 54);
+}

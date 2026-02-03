@@ -1,0 +1,115 @@
+.RB {
+  width : 30%;
+  height: 100%;
+  background-color: black;
+   border: 1px solid white;
+  border-radius: 20px;
+}
+
+.suggest {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+  border-bottom: 2px solid white
+}
+.suggest>a{
+  text-decoration: none;
+  color: white;
+}
+.suggest>a:hover{
+  color: rgb(89, 111, 54);
+}
+.cards {
+    display: flex;
+    width: 100%;
+    height: 60px;
+    /* background-color: white;
+    border: 1px solid black; */
+    /* color: black; */
+    align-items: center;
+    justify-content: space-around;
+}
+.username{
+  color: white;
+}
+.leftc{
+  /* background-color: aqua; */
+  height: 100%;
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.leftc>img{
+  height: 45px;
+  width:45px;
+  border-radius: 20px;
+
+}
+.mid{
+  /* background-color: #0095f6; */
+  height: 100%;
+  width: 45%;
+}
+.add-btn {
+  background: #0095f6;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border-style: none;
+}
+
+.add-btn:hover{
+  background-color: rgb(89, 111, 54);
+}
+.sent-btn {
+  background: gray;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.suggestions{
+  width: 100%;
+  height: 70%;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+.myprofile{
+  /* background-color: gray; */
+  padding: 15px;
+  width: 100%;
+  height: 110px;
+  display: flex;
+  border-top: 2px solid white;
+}
+.myimg{
+  width: 25%;
+  height: 100%;
+  display: flex;
+  /* background-color: #0095f6; */
+  justify-content: center;
+  align-items: center;
+}
+.myimg>img{
+  height: 60px;
+  width: 60px;
+  border-radius: 60px;
+}
+.mynames{
+  height: 100%;
+  width: 80%;
+  padding: 10px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+}
+.myname{
+  /* background-color: aqua; */
+  width: 100%;
+  font-size: xx-large;
+  font-weight: bold;
+}

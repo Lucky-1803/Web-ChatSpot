@@ -1,0 +1,8 @@
+.MB {
+  width : 45%;
+  height: 100vh;
+  background-color: black;
+   /* border: 1px solid white; */
+  border-radius: 20px;
+  padding: 10px;
+}

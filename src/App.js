@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Leftbar from "./components/Leftbar";
+import Login from "./components/Login";
+// import Home from "./Leftbar components/Home"
+import Midbar from "./components/Midbar"
+import Rightbar from "./components/Rightbar";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Signup from "./components/Signup";
+import {useState} from 'react'
 
 function App() {
+  const [refresh , setRefresh] = useState(false)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/mainHome/*" element={
+            <div className="Bars">
+              <Leftbar />
+              <Midbar setRefresh={setRefresh}/>
+              <Rightbar refresh={refresh}/>
+            </div>
+          }
+        />
+        <Route path="/" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+      </Routes>
+    </Router>
   );
 }
 

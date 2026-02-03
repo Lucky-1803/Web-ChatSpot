@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+body, html, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.Bars {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+

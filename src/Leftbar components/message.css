@@ -1,0 +1,10 @@
+.message {
+  width : 100%;
+  height: 100%;
+  /* background-color: rgb(78, 75, 75); */
+   /* border: 1px solid white; */
+  border-radius: 20px;
+  padding: 10px;
+  /* color: white; */
+  display: flex;
+}
