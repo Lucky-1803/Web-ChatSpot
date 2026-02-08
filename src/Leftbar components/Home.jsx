@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import "./Home.css";
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 function Home() {
   const [friends, setFriends] = useState([]);
 
   const fetchFriends = async () => {
     try {
       const res = await fetch(
-        "http://localhost:5000/api/friends/myfriends",
+        `${API_URL}/api/friends/myfriends`,
         {
           headers: {
             "auth-token": localStorage.getItem("token"),

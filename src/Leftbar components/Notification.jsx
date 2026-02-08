@@ -1,6 +1,8 @@
 import React , {useState , useEffect} from 'react'
 import "./Notification.css"
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 function Notification({setRefresh}) {
 
   // get all requests 
@@ -8,7 +10,7 @@ function Notification({setRefresh}) {
 
   const requests =async()=>{
     try {
-      const res = await fetch ("http://localhost:5000/api/friends/pendingreq" , {
+      const res = await fetch (`${API_URL}/api/friends/pendingreq` , {
         method : "GET",
         headers : {
           "Content-Type" : "application/json",
@@ -30,7 +32,7 @@ function Notification({setRefresh}) {
 
   const acceptReq = async(reqId)=>{
     try{
-      const res = await fetch (`http://localhost:5000/api/friends/acceptreq/${reqId}`, {
+      const res = await fetch (`${API_URL}/api/friends/acceptreq/${reqId}`, {
         method: "POST",
         headers : {
           "Content-Type" : "application/json",
@@ -49,7 +51,7 @@ function Notification({setRefresh}) {
    
   const cancelreq = async(id) =>{
     try{
-      const res = await fetch(`http://localhost:5000/api/friends/cancelreq/${id}`,{
+      const res = await fetch(`${API_URL}/api/friends/cancelreq/${id}`,{
         method :"DELETE",
         headers : {
           "auth-token" : localStorage.getItem("token")

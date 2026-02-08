@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./chatlist.css";
 import { useNavigate } from "react-router-dom";
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 function Chatlist() {
   const navigate = useNavigate();
   const [chats, setChats] = useState([]);
@@ -11,7 +13,7 @@ function Chatlist() {
   const getAllChats = async () => {
     try {
       const res = await fetch(
-        "http://localhost:5000/api/chat/getallChats",
+        `${API_URL}/api/chat/getallChats`,
         {
           method: "GET",
           headers: {
@@ -38,7 +40,7 @@ function Chatlist() {
  const deleteChat = async (chatId) => {
   try {
     const res = await fetch(
-      `http://localhost:5000/api/chat/deletechat/${chatId}`,
+      `${API_URL}/api/chat/deletechat/${chatId}`,
       {
         method: "DELETE",
         headers: {

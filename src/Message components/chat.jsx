@@ -3,7 +3,11 @@ import "./chat.css";
 import { useNavigate, useParams } from 'react-router-dom';
 import io from "socket.io-client"
 
-const socket = io("http://localhost:5000")
+const API_URL = process.env.REACT_APP_API_URL;
+
+const socket = io(API_URL,{
+  transports : ["websocket"]
+} )
 function Chat() {
   const navigate = useNavigate();
   const { chatid } = useParams();
@@ -16,7 +20,7 @@ function Chat() {
   const fetchChat = async () => {
   try {
     console.log("fetching chat with :", chatid)
-    const res = await fetch(`http://localhost:5000/api/chat/fetchChat/${chatid}`, {
+    const res = await fetch(`${API_URL}/api/chat/fetchChat/${chatid}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -24,7 +28,7 @@ function Chat() {
       }
     });
     const data = await res.json();
-    console.log("users : ", data.users)
+    // console.log("users : ", data.users)
 
     if (!res.ok) throw new Error(data.error || "Failed to fetch chat");
 
@@ -48,7 +52,7 @@ function Chat() {
 
   const sendMsg = async() =>{
     if(!msg.trim()) return
-    const res = await fetch(`http://localhost:5000/api/message/sendmsg/${chatid}` , {
+    const res = await fetch(`${API_URL}/api/message/sendmsg/${chatid}` , {
       method: "POST",
       headers:{
         "Content-Type" : "application/json",
@@ -58,14 +62,14 @@ function Chat() {
         content : msg
       })
     })
-    const data = await res.json()
+    // const data = await res.json()
     setMsg("")
   }
 
   // Fetch all Messages 
   
   const allMsgs = async()=>{
-    const res = await fetch(`http://localhost:5000/api/message/allMsgs/${chatid}`,{
+    const res = await fetch(`${API_URL}/api/message/allMsgs/${chatid}`,{
       method:"GET",
       headers: {
         "auth-token" : localStorage.getItem("token")

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import "./Rightbar.css"
 
+const API_URL = process.env.REACT_APP_API_URL;
 
 function Rightbar({refresh}) {
 
@@ -9,7 +10,7 @@ function Rightbar({refresh}) {
 
   // Send friend request
   const sendRequest = async (userId)=>{
-    let res = await fetch(`http://localhost:5000/api/friends/sendreq/${userId}`,{
+    let res = await fetch(`${API_URL}/api/friends/sendreq/${userId}`,{
       method: "POST",
       headers : {
         "Content-Type": "application/json",
@@ -31,7 +32,7 @@ function Rightbar({refresh}) {
   // Your id
 
   const loggedIn = async()=>{
-    const res = await fetch("http://localhost:5000/api/auth/getuser" , {
+    const res = await fetch(`${API_URL}/api/auth/getuser` , {
       method: "POST",
       headers :{
         "auth-token": localStorage.getItem("token")
@@ -44,7 +45,7 @@ function Rightbar({refresh}) {
   // fetchusers
 useEffect(() => {
   const fetchUser = async()=>{
-    const res = await fetch("http://localhost:5000/api/auth/getallusers",{
+    const res = await fetch(`${API_URL}/api/auth/getallusers`,{
       method : "GET",
       headers : {
         "Content-Type":"application/json",

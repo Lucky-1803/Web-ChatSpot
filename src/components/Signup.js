@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./Signup.css";
 import { useNavigate } from "react-router-dom";
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 function Signup() {
   const navigate = useNavigate()
   useEffect(() => {
@@ -20,7 +22,7 @@ function Signup() {
       alert("Password doesnt match to confirm password")
       return
     }
-    const response = await fetch("http://localhost:5000/api/auth/createuser",{
+    const response = await fetch(`${API_URL}/api/auth/createuser`,{
       method : "POST",
       headers : {     
         "Content-type": "application/json"

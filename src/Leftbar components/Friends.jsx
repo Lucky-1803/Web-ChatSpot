@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./Friends.css";
 import { useNavigate } from "react-router-dom";
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 function Friends({ setRefresh }) {
   const [friends, setFriends] = useState([]);
   const navigate = useNavigate();
@@ -10,7 +12,7 @@ function Friends({ setRefresh }) {
   const myFriends = async () => {
     try {
       const res = await fetch(
-        "http://localhost:5000/api/friends/myfriends",
+        `${API_URL}/api/friends/myfriends`,
         {
           headers: {
             "auth-token": localStorage.getItem("token"),
@@ -39,7 +41,7 @@ function Friends({ setRefresh }) {
   // remove friend (friendId)
   const removeFriend = async (friendId) => {
     await fetch(
-      `http://localhost:5000/api/friends/removefriends/${friendId}`,
+      `${API_URL}/api/friends/removefriends/${friendId}`,
       {
         method: "DELETE",
         headers: {
@@ -58,7 +60,7 @@ function Friends({ setRefresh }) {
   // create chat
   const createChat = async (friendId) => {
     const res = await fetch(
-      "http://localhost:5000/api/message/createchat",
+      `${API_URL}/api/message/createchat`,
       {
         method: "POST",
         headers: {
